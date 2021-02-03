@@ -2,13 +2,18 @@ import styles from '../styles/index.module.scss'
 import ImagesDisplayComponent from '../components/ImagesDisplayComponent'
 
 import Image from 'next/image'
-import { BsDownload, BsHeart } from 'react-icons/bs'
+import Head from 'next/head'
+import { BsDownload, BsHeart, BsPhone } from 'react-icons/bs'
+import { VscDeviceCamera } from 'react-icons/vsc'
 import CountUp from 'react-countup';
 import { getUserData, getUserPhotos } from '../util/util';
 
-
 export default function Index({ userData, userPhotos }) {
     return(
+        <>
+        <Head>
+            <title>José Marques - Photographic portfolio" </title>
+        </Head>
         <div className={styles.index}>
             <div className={styles.userContainer}>
                 <Image 
@@ -24,7 +29,7 @@ export default function Index({ userData, userPhotos }) {
                         border: 2px solid black;
                     }
                 `}</style>
-                <h1><a href={userData.links.html} target="_blank">@{userData.username}</a></h1>
+                <h1><a href={userData.links.html} target="_blank" rel="noreferrer">@{userData.username}</a></h1>
                 <h2>{userData.name}</h2>
                 <div className={styles.stats}>
                     <h3>
@@ -40,9 +45,27 @@ export default function Index({ userData, userPhotos }) {
                         </span>
                     </h3>
                 </div>
+                <div className={styles.cameraSpecs}>
+                    <h3 style={{ marginBottom: '10px' }}>
+                        <VscDeviceCamera style={{ marginRight: '7px' }}/> 
+                        Sony A600
+                    </h3>
+                    <h3>
+                        <BsPhone style={{ marginRight: '7px' }}/> 
+                        Samsung G A51
+                    </h3>
+                </div>
             </div>
             <ImagesDisplayComponent userPhotos={userPhotos} />
+            <a 
+                href="https://jose-marques.dev/" 
+                target="_blank" rel="noreferrer" 
+                className={styles.footer}
+            >
+                <span>José Marques</span> 2021
+            </a>
         </div>
+        </>
     )
 }
 
