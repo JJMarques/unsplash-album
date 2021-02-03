@@ -1,23 +1,32 @@
 .index {
-    margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     animation: example 2s;
 
-    h1 {
-        margin: 20px 0 10px 0;
-        font-size: 2.1em;
-        font-weight: 400;
-    }
+    .userContainer {
+        padding: 2em 0;
+        width: 100%;
+        background: rgb(233, 233, 233);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    h2 {
-        font-weight: 300;
-        color: rgb(114, 114, 114);
-    }
-
-    img {
-        border-radius: 50%;
+        h1 {
+            margin: 20px 0 10px 0;
+            font-size: 2.1em;
+            font-weight: 400;
+    
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    
+        h2 {
+            font-weight: 300;
+            color: rgb(114, 114, 114);
+        }
     }
 
     .stats {
@@ -41,11 +50,11 @@
 
 @keyframes example {
     from {
-        opacity: 0;
+        filter: opacity(0%);
         transform: translateY(10px);
     }
     to {
-        opacity: 1;
+        filter: opacity(100%);
         transform: translateY(0);
     }
   }

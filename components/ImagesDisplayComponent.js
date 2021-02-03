@@ -2,7 +2,6 @@ import Image from 'next/image'
 import styles from '../styles/ImagesDisplayComponent.module.scss'
 
 export default function ImagesDisplayComponent({ userPhotos }) {
-    console.log(userPhotos)
     return(
         <div className={styles.imagesDisplay}>
             {userPhotos.map(image => (
